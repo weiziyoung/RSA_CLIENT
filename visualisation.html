@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualisation</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="snabbt.min.js"></script>
+    <link rel="stylesheet" href="bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=1.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+</head>
+<body>
+    <div>
+            <div class="container is-primary" style="width: 500px; height:100px; margin:20px auto;background-color: #00d1b2" >
+              <h1 class="title" style="color:#fff;padding:15px;font-size:24px ">
+                  How to calculate the private secret key — "e" with Euclid’s algorithm(e*d%φ==1）
+              </h1>
+            </div>
+
+        <div id="top_board" style="width: 500px; height:50px; margin:20px auto; background-color: #f5f5f5" >
+            <div class="control" style="padding-top:5px;">
+                <label class="label" style="width:7%;text-align: center;line-height: 2;margin-left:20px;display:inline">d=</label>
+                <input id="d" class="input is-success" type="text" placeholder="input d" value="17" style="width: 30%">
+                <label class="label" style="width:7%;text-align: center; line-height: 2;margin-left:20px;display: inline">φ=</label>
+                <input id="fa" class="input is-success" type="text" placeholder="Input φ" value="2668" style="width: 30%">
+                <button id="start" class="button is-success">
+                  Start!
+                </button>
+            </div>
+        </div>
+        <div id="mid_board" style="width:500px; height:110px;margin:20px auto; background-color: #f5f5f5">
+            <div id="equation1" style="padding-left:10px;display:inline-block;white-space:normal;top:10px;font-weight:bold;position: relative;left:30px;color:#ffffff;background-color: #74b9ff;width: 200px;height:70px;line-height:30px;word-break:break-all;word-wrap:break-word;">
+                new_d = φ % d &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;new_φ= d</div>
+            <div id="equation2" style="padding-left:10px;display:inline-block;white-space:normal;top:10px;font-weight:bold;position:relative;left:50px;color:#ffffff;background-color: #ff7675;width: 200px;height:70px;line-height:30px;word-break:break-all;word-wrap:break-word;">
+                <p>
+                    new_x = y - (φ/d) * x;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                    new_y = x;
+                </p>
+            </div>
+        </div>
+        <div id="playground" style="width: 500px; height:500px; margin:20px auto; background-color: #f5f5f5">
+            <div id="left_obj" style="color:#dfe6e9;width: 150px;height:50px; position:relative;left:40px;top:-150px; background-color: #0984e3;border-radius: 4px;display: none;font-weight:bold;text-align:center;line-height:50px;">
+            </div>
+            <div id="right_obj" style="color:#dfe6e9;width: 150px;height:50px; position:relative;left:300px;top:-400px; background-color: #d63031;border-radius: 4px;display: none;font-weight:bold;text-align:center;line-height:50px;">
+            </div>
+            <div id="btm_obj" style="color:#dfe6e9;width: 200px;height:50px; position:relative;left:150px;top:25px; background-color: #2d3436;border-radius: 4px;display: none;font-weight:bold;text-align:center;line-height:50px;">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="visual.js"></script>
+</body>
+</html>
